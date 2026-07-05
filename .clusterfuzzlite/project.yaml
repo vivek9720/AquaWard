@@ -1,0 +1,12 @@
+language: rust
+main_repo: .
+fuzzing_engines:
+  - libfuzzer
+sanitizers:
+  - address
+fuzz_targets:
+  - bundle_fuzzer
+  - stream_fuzzer
+  - script_fuzzer
+  - plume_fuzzer
+  - ledger_fuzzer

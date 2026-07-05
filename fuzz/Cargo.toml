@@ -1,0 +1,54 @@
+[package]
+name = "aquaward-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+aquaward = { path = ".." }
+libfuzzer-sys = { path = "libfuzzer-sys" }
+
+[workspace]
+
+[profile.release]
+debug = 1
+overflow-checks = true
+panic = "abort"
+
+[[bin]]
+name = "bundle_fuzzer"
+path = "fuzz_targets/bundle_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "stream_fuzzer"
+path = "fuzz_targets/stream_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "script_fuzzer"
+path = "fuzz_targets/script_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "plume_fuzzer"
+path = "fuzz_targets/plume_fuzzer.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "ledger_fuzzer"
+path = "fuzz_targets/ledger_fuzzer.rs"
+test = false
+doc = false
+bench = false

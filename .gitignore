@@ -1,0 +1,11 @@
+/target/
+/fuzz/target/
+/out/
+/fuzz/artifacts/
+/fuzz/crashes/
+/fuzz/coverage/
+*.profraw
+*.profdata
+crash-*
+oom-*
+timeout-*

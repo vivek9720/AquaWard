@@ -1,0 +1,29 @@
+[package]
+name = "aquaward"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+description = "Offline municipal water-safety incident bundle decoder and analyzer"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["water", "parser", "fuzzing", "protocol"]
+categories = ["parser-implementations", "simulation"]
+
+[dependencies]
+
+[lib]
+name = "aquaward"
+path = "src/lib.rs"
+
+[[bin]]
+name = "aquaward-dump"
+path = "src/bin/aquaward-dump.rs"
+
+[profile.dev]
+overflow-checks = true
+
+[profile.release]
+opt-level = 3
+debug = true
+overflow-checks = true
+panic = "abort"
